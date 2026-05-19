@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model UN 2026 — Student Delegate Booklet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --un-blue: #009EDB;
+    --un-dark: #1a2744;
+    --un-light: #e8f4fb;
+    --gold: #C9A84C;
+    --gold-light: #f5e9c8;
+    --cream: #faf8f3;
+    --text: #1e2535;
+    --muted: #6b7a99;
+    --border: #d4dde8;
+    --green: #2e7d52;
+    --green-light: #e8f5ee;
+    --red: #c0392b;
+    --red-light: #fdecea;
+    --amber: #d4830a;
+    --amber-light: #fef3e2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--un-dark);
+    display: flex; align-items: center; gap: 0;
+    padding: 0 1.5rem;
+    height: 52px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.35);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a {
+    color: rgba(255,255,255,.72);
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    padding: 0 .85rem;
+    height: 52px;
+    display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  nav a:hover, nav a.active { color: #fff; border-bottom-color: var(--gold); }
+  nav .nav-title {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 1rem;
+    white-space: nowrap;
+    padding: 0 .85rem 0 0;
+    border-right: 1px solid rgba(255,255,255,.15);
+  }
+
+  /* ── LAYOUT ── */
+  .page { padding-top: 52px; }
+  section { padding: 3rem 1.5rem; max-width: 900px; margin: 0 auto; }
+  section + section { border-top: 1px solid var(--border); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--un-dark);
+    padding: 0 !important;
+    max-width: 100% !important;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 3.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(0,158,219,.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(201,168,76,.12) 0%, transparent 50%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(201,168,76,.15);
+    border: 1px solid rgba(201,168,76,.35);
+    color: var(--gold);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    padding: .35rem .8rem;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: .75rem;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    color: rgba(255,255,255,.7);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin-bottom: 2rem;
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .hero-meta-item {
+    display: flex; flex-direction: column;
+    border-left: 2px solid var(--gold);
+    padding-left: .75rem;
+  }
+  .hero-meta-item .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: .1em;
+    color: rgba(255,255,255,.45);
+    text-transform: uppercase;
+  }
+  .hero-meta-item .value {
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 600;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--un-blue);
+    text-transform: uppercase;
+    margin-bottom: .4rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--un-dark);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--un-dark);
+    margin-bottom: .6rem;
+  }
+  h4 {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--muted);
+    margin-bottom: .4rem;
+  }
+  p { margin-bottom: .75rem; color: var(--text); }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── CARDS ── */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.4rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  .schedule th {
+    background: var(--un-dark); color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: .05em;
+    padding: .6rem 1rem; text-align: left;
+  }
+  .schedule td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .schedule tr:nth-child(even) td { background: var(--un-light); }
+  .schedule .time { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--un-blue); white-space: nowrap; }
+  .schedule .session-name { font-weight: 700; color: var(--un-dark); }
+
+  /* ── COUNTRY TABS ── */
+  .country-tabs {
+    display: flex; flex-wrap: wrap; gap: .4rem;
+    margin-bottom: 1.25rem;
+  }
+  .ctab {
+    cursor: pointer;
+    padding: .35rem .85rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #fff;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .ctab:hover { border-color: var(--un-blue); color: var(--un-blue); }
+  .ctab.active { background: var(--un-dark); color: #fff; border-color: var(--un-dark); }
+
+  .country-panel { display: none; }
+  .country-panel.active { display: block; }
+
+  /* ── COUNTRY PROFILE CARD ── */
+  .profile-header {
+    display: flex; align-items: flex-start; gap: 1.25rem;
+    margin-bottom: 1.25rem; flex-wrap: wrap;
+  }
+  .flag-emoji { font-size: 3rem; line-height: 1; }
+  .profile-meta h3 { margin-bottom: .2rem; font-size: 1.5rem; }
+  .profile-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+  .tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: .2rem .55rem;
+    border-radius: 2px;
+  }
+  .tag-blue { background: var(--un-light); color: var(--un-blue); }
+  .tag-green { background: var(--green-light); color: var(--green); }
+  .tag-red { background: var(--red-light); color: var(--red); }
+  .tag-amber { background: var(--amber-light); color: var(--amber); }
+  .tag-gold { background: var(--gold-light); color: #7a5c00; }
+
+  .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: .75rem;
+    margin-bottom: 1.25rem;
+  }
+  .profile-stat {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: .6rem .9rem;
+  }
+  .profile-stat .stat-label {
+    font-size: 10px;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: .06em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: .15rem;
+  }
+  .profile-stat .stat-value {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--un-dark);
+  }
+
+  .position-block {
+    background: var(--un-dark);
+    color: #fff;
+    border-radius: 5px;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .position-block h4 { color: var(--gold); margin-bottom: .5rem; }
+  .position-block p { color: rgba(255,255,255,.82); font-size: .93rem; margin-bottom: .4rem; }
+
+  .amendment-suggestion {
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    border-radius: 0 4px 4px 0;
+    padding: .9rem 1.1rem;
+    margin-bottom: .75rem;
+  }
+  .amendment-suggestion h4 { color: var(--green); margin-bottom: .3rem; }
+  .amendment-suggestion p { font-size: .9rem; margin-bottom: .2rem; }
+
+  .allies-block {
+    background: var(--gold-light);
+    border: 1px solid rgba(201,168,76,.35);
+    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .allies-block h4 { color: #7a5c00; margin-bottom: .5rem; }
+  .ally-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .ally-chip {
+    background: #fff;
+    border: 1px solid rgba(201,168,76,.4);
+    border-radius: 2px;
+    padding: .25rem .65rem;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--un-dark);
+  }
+
+  .caution-block {
+    background: var(--red-light);
+    border-left: 3px solid var(--red);
+    border-radius: 0 4px 4px 0;
+    padding: .9rem 1.1rem;
+    margin-bottom: .75rem;
+  }
+  .caution-block h4 { color: var(--red); margin-bottom: .3rem; }
+  .caution-block p { font-size: .9rem; margin-bottom: .2rem; }
+
+  /* ── SPEECH GUIDE ── */
+  .phrase-section { margin-bottom: 2rem; }
+  .phrase-section h3 { margin-bottom: .75rem; }
+  .phrase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: .6rem;
+  }
+  .phrase {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--un-blue);
+    border-radius: 0 4px 4px 0;
+    padding: .7rem 1rem;
+    font-size: .9rem;
+    font-style: italic;
+    color: var(--un-dark);
+  }
+  .phrase span {
+    display: block;
+    font-style: normal;
+    font-size: .78rem;
+    color: var(--muted);
+    margin-top: .2rem;
+  }
+  .phrase-gold { border-left-color: var(--gold); }
+  .phrase-green { border-left-color: var(--green); }
+  .phrase-red { border-left-color: var(--red); }
+
+  /* ── AMENDMENT GUIDE ── */
+  .amendment-step {
+    display: flex; gap: 1.1rem;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    background: var(--un-dark);
+    color: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .step-body h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+
+  .word-bank {
+    display: flex; flex-wrap: wrap; gap: .4rem;
+    margin-top: .5rem;
+  }
+  .word-chip {
+    background: var(--un-light);
+    border: 1px solid rgba(0,158,219,.25);
+    color: var(--un-dark);
+    padding: .25rem .65rem;
+    border-radius: 2px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 600;
+  }
+  .word-chip.operative {
+    background: var(--green-light);
+    border-color: rgba(46,125,82,.25);
+  }
+
+  .example-amendment {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    margin-top: 1.5rem;
+  }
+  .example-amendment .ex-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .1em;
+    color: var(--gold);
+    margin-bottom: .75rem;
+    text-transform: uppercase;
+  }
+  .amendment-form-row { margin-bottom: .6rem; }
+  .amendment-form-row .field-label {
+    font-weight: 700;
+    font-size: .85rem;
+    color: var(--un-dark);
+  }
+  .amendment-form-row .field-value {
+    font-size: .9rem;
+    color: var(--text);
+  }
+  .strike { text-decoration: line-through; color: var(--red); }
+  .insert { color: var(--green); font-weight: 700; }
+
+  /* ── PROTOCOL ── */
+  .protocol-rule {
+    display: flex; gap: .85rem; align-items: flex-start;
+    padding: .75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .protocol-rule:last-child { border-bottom: none; }
+  .protocol-icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    background: var(--un-dark);
+    color: var(--gold);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .protocol-rule p { font-size: .9rem; margin: 0; }
+
+  /* ── RESOLUTION ── */
+  .resolution-clause {
+    display: flex; gap: 1rem;
+    padding: .85rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .clause-num {
+    flex-shrink: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: var(--un-blue);
+    font-weight: 700;
+    min-width: 30px;
+    padding-top: .1rem;
+  }
+  .clause-key { font-style: italic; color: var(--un-dark); font-weight: 700; }
+  .clause-text { font-size: .9rem; }
+
+  /* ── ALLIANCE MAP ── */
+  .alliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: .75rem;
+    margin-top: 1rem;
+  }
+  .alliance-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: .85rem 1rem;
+  }
+  .alliance-card h4 { font-size: .85rem; margin-bottom: .4rem; }
+  .alliance-card p { font-size: .83rem; color: var(--muted); margin: 0; }
+
+  /* ── TIPS BOX ── */
+  .tip-box {
+    background: var(--un-light);
+    border: 1px solid rgba(0,158,219,.25);
+    border-radius: 5px;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+  .tip-box h4 { color: var(--un-blue); margin-bottom: .5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--un-dark);
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .04em;
+  }
+
+  /* ── PRINT FRIENDLY ── */
+  @media print {
+    nav { display: none; }
+    .page { padding-top: 0; }
+    .hero { break-inside: avoid; }
+    section { break-inside: avoid; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 2rem 1rem; }
+    .profile-grid { grid-template-columns: 1fr 1fr; }
+    nav a { font-size: 10px; padding: 0 .6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-title">MUN 2026</div>
+  <a href="#overview">Overview</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#resolution">Resolution</a>
+  <a href="#countries">Countries</a>
+  <a href="#speeches">Speeches</a>
+  <a href="#amendments">Amendments</a>
+  <a href="#protocol">Protocol</a>
+  <a href="#alliances">Alliances</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="overview">
+  <div class="hero-inner">
+    <div class="hero-badge">🌏 UNAAV Victorian Division · 2026</div>
+    <h1>Model United Nations<br><span>Delegate Booklet</span></h1>
+    <p>Klimawandel bekämpfen: Gemeinsam globale Maßnahmen ergreifen<br>
+    <em style="font-style:italic;opacity:.8">Combating Climate Change: Committing to Global Action</em></p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="label">Topic</span>
+        <span class="value">Climate Action</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">SDGs</span>
+        <span class="value">13 · 7 · 12 · 17</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Language</span>
+        <span class="value">Deutsch</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="label">Session</span>
+        <span class="value">UN General Assembly</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="section-label">Day Structure</div>
+  <h2>Conference Schedule</h2>
+  <p>The day follows UN General Assembly protocol. Know the timing so you're ready for every session.</p>
+  <table class="schedule">
+    <thead>
+      <tr><th>Time</th><th>Session</th><th>What you do</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="time">8:30–9:00</td><td><span class="session-name">Registration / Anmeldung</span></td><td>Arrive, find your country seats, review notes</td></tr>
+      <tr><td class="time">9:00–9:05</td><td><span class="session-name">Opening / Konferenzbeginn</span></td><td>Formal opening — listen and be seated</td></tr>
+      <tr><td class="time">9:05–9:20</td><td><span class="session-name">Secretary-General's Address</span></td><td>Overview of topic and protocol explained</td></tr>
+      <tr><td class="time">9:20–10:40</td><td><span class="session-name">Session 1: Position Statements</span></td><td>Each country presents 3-min statement (alphabetical order). Fill in your "Friend or Foe" sheet!</td></tr>
+      <tr><td class="time">10:40–11:00</td><td><span class="session-name">Morning Tea / PAUSE</span></td><td>Network — talk to potential allies!</td></tr>
+      <tr><td class="time">11:00–12:30</td><td><span class="session-name">Session 2: Caucus</span></td><td>Moderated debate + unmoderated free discussion. Submit amendments before lunch.</td></tr>
+      <tr><td class="time">12:30–1:30</td><td><span class="session-name">Lunch / MITTAGSPAUSE</span></td><td>Finalise amendments, gather supporters</td></tr>
+      <tr><td class="time">1:30–2:40</td><td><span class="session-name">Session 3: Amendments</span></td><td>Amendments debated and voted on (simple majority)</td></tr>
+      <tr><td class="time">2:40–2:50</td><td><span class="session-name">Session 4: Resolution Vote</span></td><td>Vote on final resolution</td></tr>
+      <tr><td class="time">2:50–3:00</td><td><span class="session-name">Closing / Abschlussrede</span></td><td>Secretary-General closing remarks</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- RESOLUTION -->
+<section id="resolution">
+  <div class="section-label">Official Working Document</div>
+  <h2>The Draft Resolution</h2>
+  <p>This is the document you will debate, amend, and vote on. Read every clause carefully — your amendments must reference specific clause numbers.</p>
+
+  <div style="margin-bottom:1.5rem;">
+    <h3 style="color:var(--un-blue);margin-bottom:.75rem;">PREAMBLE — <em style="font-size:.85em;font-weight:400">Why we are here</em></h3>
+    <div class="resolution-clause"><div class="clause-num">1.1</div><div class="clause-text"><span class="clause-key">Deeply concerned</span> with greenhouse gas build-up and its impact on Earth's climate</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.2</div><div class="clause-text"><span class="clause-key">Aware</span> that greenhouse gases are largely the result of human activities, including burning fossil fuels</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.3</div><div class="clause-text"><span class="clause-key">Alarmed</span> that all countries — especially developing nations and small island states — face increased climate risks</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.4</div><div class="clause-text"><span class="clause-key">Reiterating</span> that climate action must be integrated with social/economic development and poverty eradication</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.5</div><div class="clause-text"><span class="clause-key">Keeping in mind</span> the world's continued dependence on energy, food, and transport systems that drive emissions</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.6</div><div class="clause-text"><span class="clause-key">Guided by</span> a commitment to long-term practical decisions for the safety of future generations</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.7</div><div class="clause-text"><span class="clause-key">Emphasises</span> that young people's representation in climate negotiations is essential</div></div>
+    <div class="resolution-clause"><div class="clause-num">1.8</div><div class="clause-text"><span class="clause-key">Recognising</span> that vulnerable peoples are disproportionately affected by climate change, including food rights</div></div>
+  </div>
+
+  <div>
+    <h3 style="color:var(--green);margin-bottom:.75rem;">OPERATIVE — <em style="font-size:.85em;font-weight:400">What we agree to do</em></h3>
+    <div class="resolution-clause"><div class="clause-num">2.1</div><div class="clause-text"><span class="clause-key">Urges</span> all nations to commit to Paris Agreement goals and increase emission reduction targets to stay below +2°C</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.2</div><div class="clause-text"><span class="clause-key">Requests</span> wealthy nations invest in renewable energy (wind, solar, hydro) and phase out coal, gas, oil and nuclear</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.3</div><div class="clause-text"><span class="clause-key">Calls upon</span> all nations to protect forests and invest heavily in reforestation to absorb CO₂</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.4</div><div class="clause-text"><span class="clause-key">Invites</span> States to implement sustainable agriculture and hold the sector accountable for its climate impacts</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.5</div><div class="clause-text"><span class="clause-key">Encourages</span> all States to promote plant-based diets to reduce emissions and improve food security</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.6</div><div class="clause-text"><span class="clause-key">Suggests</span> wealthy nations increase contributions to the Green Climate Fund for adaptation in developing countries</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.7</div><div class="clause-text"><span class="clause-key">Further reminds</span> States to provide green jobs when transitioning from fossil fuels and eliminate inefficient subsidies</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.8</div><div class="clause-text"><span class="clause-key">Appeals</span> to all States to increase Indigenous peoples' representation in climate negotiations</div></div>
+    <div class="resolution-clause"><div class="clause-num">2.9</div><div class="clause-text"><span class="clause-key">Recommends</span> Member States recognise the right to a clean, healthy environment as a human right</div></div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section id="countries">
+  <div class="section-label">Your Teams</div>
+  <h2>Country Profiles</h2>
+  <p>Select your country below for a full profile including climate position, suggested amendments, and strategic allies.</p>
+
+  <div class="country-tabs">
+    <div class="ctab active" onclick="showCountry('uk')">🇬🇧 UK</div>
+    <div class="ctab" onclick="showCountry('saudi')">🇸🇦 Saudi Arabia</div>
+    <div class="ctab" onclick="showCountry('denmark')">🇩🇰 Denmark</div>
+    <div class="ctab" onclick="showCountry('costarica')">🇨🇷 Costa Rica</div>
+    <div class="ctab" onclick="showCountry('vanuatu')">🇻🇺 Vanuatu</div>
+    <div class="ctab" onclick="showCountry('egypt')">🇪🇬 Egypt</div>
+    <div class="ctab" onclick="showCountry('turkiye')">🇹🇷 Türkiye</div>
+    <div class="ctab" onclick="showCountry('barbados')">🇧🇧 Barbados</div>
+    <div class="ctab" onclick="showCountry('australia')">🇦🇺 Australia</div>
+    <div class="ctab" onclick="showCountry('usa')">🇺🇸 USA</div>
+    <div class="ctab" onclick="showCountry('gabon')">🇬🇦 Gabon</div>
+  </div>
+
+  <!-- UK -->
+  <div class="country-panel active" id="country-uk">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇬🇧</div>
+        <div class="profile-meta">
+          <h3>United Kingdom</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">Vereinigtes Königreich Großbritannien und Nordirland</p>
+          <div class="profile-tags">
+            <span class="tag tag-blue">G7 Member</span>
+            <span class="tag tag-green">Strong Climate Commitments</span>
+            <span class="tag tag-gold">COP26 Host</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Western Europe</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Developed / G7</div></div>
+        <div class="profile-stat"><div class="stat-label">CO₂ Emissions</div><div class="stat-value">Decreasing (−40% since 1990)</div></div>
+        <div class="profile-stat"><div class="stat-label">Renewables Target</div><div class="stat-value">100% clean power by 2030</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓</div></div>
+        <div class="profile-stat"><div class="stat-label">Key Alliance</div><div class="stat-value">EU, Commonwealth</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>The UK is a world leader in decarbonisation. We hosted COP26 in Glasgow in 2021 and have legislated a 2050 net-zero target. The UK has cut emissions faster than any other G7 nation and strongly supports the Paris Agreement's 1.5°C ambition. We believe wealthy nations must lead by example and support technology transfer to developing countries.</p>
+        <p><strong>Key message:</strong> "The UK calls on all nations to strengthen their NDCs and urges developed states to honour their $100 billion climate finance pledge."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.2</h4>
+        <p><strong>Goal:</strong> Strengthen the phase-out of nuclear (UK is expanding nuclear, so amend this)</p>
+        <p><strong>Proposed change:</strong> In 2.2, add after "phase out their reliance on non-renewable energy sources" → <em>", with the exception of low-carbon nuclear energy as a transitional technology where appropriate"</em></p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.6</h4>
+        <p><strong>Goal:</strong> Strengthen climate finance commitments</p>
+        <p><strong>Proposed change:</strong> Replace "Suggests" with "Urges" and add a specific timeline: <em>"…increase their financial support to the Green Climate Fund, reaching their committed $100 billion annually by 2025"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies (in this conference)</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇩🇰 Denmark</div>
+          <div class="ally-chip">🇩🇪 Germany</div>
+          <div class="ally-chip">🇫🇷 France</div>
+          <div class="ally-chip">🇨🇦 Canada</div>
+          <div class="ally-chip">🇦🇺 Australia</div>
+          <div class="ally-chip">🇪🇸 Spain</div>
+          <div class="ally-chip">🇯🇵 Japan</div>
+          <div class="ally-chip">🇬🇷 Greece</div>
+        </div>
+      </div>
+      <div class="caution-block">
+        <h4>⚠️ Likely Opposition</h4>
+        <p>Saudi Arabia will oppose strong fossil fuel phase-out language. USA (under current administration) may weaken binding commitments. Engage these countries diplomatically — find compromise language.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAUDI ARABIA -->
+  <div class="country-panel" id="country-saudi">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇸🇦</div>
+        <div class="profile-meta">
+          <h3>Saudi Arabia</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">المملكة العربية السعودية — Kingdom of Saudi Arabia</p>
+          <div class="profile-tags">
+            <span class="tag tag-amber">OPEC+ Leader</span>
+            <span class="tag tag-red">Major Oil Producer</span>
+            <span class="tag tag-gold">Vision 2030</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Middle East</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Developed / Oil-dependent</div></div>
+        <div class="profile-stat"><div class="stat-label">CO₂ Per Capita</div><div class="stat-value">Among world's highest</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2060</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓</div></div>
+        <div class="profile-stat"><div class="stat-label">Renewables Plan</div><div class="stat-value">50% by 2030 (domestic)</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Saudi Arabia supports climate action but insists on a just and orderly energy transition that does not threaten energy security or developing economies. Saudi Aramco is investing billions in carbon capture. Saudi Arabia has committed to net zero by 2060 and 50% renewables domestically by 2030 under Vision 2030.</p>
+        <p><strong>Key message:</strong> "Saudi Arabia believes in a realistic, balanced transition. An abrupt phase-out of fossil fuels would devastate millions of jobs and harm energy security in the developing world. We support technology investment and carbon capture as part of a comprehensive solution."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.2</h4>
+        <p><strong>Goal:</strong> Soften the fossil fuel phase-out</p>
+        <p><strong>Proposed change:</strong> Replace "phase out their reliance on non-renewable energy sources" with <em>"work towards a gradual and managed transition away from non-renewable energy sources, ensuring energy security and economic stability"</em></p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.7</h4>
+        <p><strong>Goal:</strong> Protect fossil fuel dependent economies</p>
+        <p><strong>Proposed change:</strong> After "eliminating inefficient fossil fuel subsidies" add <em>", taking into account the specific economic circumstances and development needs of States whose economies are heavily reliant on fossil fuel production"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇺🇸 USA</div>
+          <div class="ally-chip">🇪🇬 Egypt</div>
+          <div class="ally-chip">🇹🇷 Türkiye</div>
+          <div class="ally-chip">🇨🇳 China</div>
+          <div class="ally-chip">🇮🇳 India</div>
+          <div class="ally-chip">🇧🇷 Brazil</div>
+        </div>
+      </div>
+      <div class="caution-block">
+        <h4>⚠️ Likely Opposition</h4>
+        <p>Denmark, UK, Germany, Costa Rica, and Vanuatu will push for strong fossil fuel phase-out language. Small island states will strongly oppose any weakening of 2.1 (Paris targets). Acknowledge climate change is real while arguing for realistic transition timelines.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DENMARK -->
+  <div class="country-panel" id="country-denmark">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇩🇰</div>
+        <div class="profile-meta">
+          <h3>Denmark</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">Kongeriget Danmark — Kingdom of Denmark</p>
+          <div class="profile-tags">
+            <span class="tag tag-green">Climate Champion</span>
+            <span class="tag tag-blue">EU Member</span>
+            <span class="tag tag-gold">Wind Power Leader</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Northern Europe</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Developed / Nordic</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2050 (legally binding)</div></div>
+        <div class="profile-stat"><div class="stat-label">Renewables</div><div class="stat-value">~80% electricity from wind</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓ (ambitious NDC)</div></div>
+        <div class="profile-stat"><div class="stat-label">Climate Finance</div><div class="stat-value">One of highest per capita</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Denmark is one of the world's most ambitious climate actors. We have reduced emissions by 67% since 1990 and generate ~80% of electricity from wind. We support the 1.5°C target, oppose any weakening of Paris commitments, and believe in rapid phase-out of all fossil fuels. Denmark strongly supports the Green Climate Fund and climate justice for small island nations.</p>
+        <p><strong>Key message:</strong> "Denmark urges all nations — especially wealthy industrialised states — to match ambition with action. The science is clear: 1.5°C is non-negotiable. Denmark stands ready to share our renewable energy expertise with all nations."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.1</h4>
+        <p><strong>Goal:</strong> Raise ambition from 2°C to 1.5°C target</p>
+        <p><strong>Proposed change:</strong> Replace "well below two degrees" with <em>"1.5 degrees Celsius above pre-industrial levels, in line with the most ambitious goal of the Paris Agreement"</em></p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.2</h4>
+        <p><strong>Goal:</strong> Set a deadline for fossil fuel phase-out</p>
+        <p><strong>Proposed change:</strong> Add at end of 2.2: <em>", with all developed nations committing to phase out coal by 2030 and all fossil fuels by 2040"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇬🇧 UK</div>
+          <div class="ally-chip">🇩🇪 Germany</div>
+          <div class="ally-chip">🇫🇷 France</div>
+          <div class="ally-chip">🇨🇷 Costa Rica</div>
+          <div class="ally-chip">🇻🇺 Vanuatu</div>
+          <div class="ally-chip">🇧🇧 Barbados</div>
+          <div class="ally-chip">🇨🇱 Chile</div>
+          <div class="ally-chip">🇰🇪 Kenya</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COSTA RICA -->
+  <div class="country-panel" id="country-costarica">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇨🇷</div>
+        <div class="profile-meta">
+          <h3>Costa Rica</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">República de Costa Rica</p>
+          <div class="profile-tags">
+            <span class="tag tag-green">Green Champion</span>
+            <span class="tag tag-green">99% Renewables</span>
+            <span class="tag tag-blue">Biodiversity Leader</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Central America</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Developing (upper-middle)</div></div>
+        <div class="profile-stat"><div class="stat-label">Electricity</div><div class="stat-value">99%+ from renewables</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2050 (ambitious)</div></div>
+        <div class="profile-stat"><div class="stat-label">Forests</div><div class="stat-value">Doubled coverage since 1980s</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓ (1.5°C aligned)</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Costa Rica proves that economic development and environmental protection can go hand in hand. Despite being a small developing nation, we generate over 99% of electricity from renewables, and our forests now cover 58% of the country. We are a champion of the 1.5°C target and advocate strongly for the rights of nature and future generations.</p>
+        <p><strong>Key message:</strong> "Costa Rica calls on all nations, especially wealthy industrialised States, to match our ambition. If we can do it, so can they. We call for urgent strengthening of the Green Climate Fund and protection of all remaining forests globally."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.3</h4>
+        <p><strong>Goal:</strong> Strengthen forest protection language</p>
+        <p><strong>Proposed change:</strong> Replace "invest heavily in reforestation" with <em>"commit to a zero-deforestation policy by 2030, invest heavily in reforestation and forest restoration, and establish legally binding forest protection frameworks"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇻🇺 Vanuatu</div>
+          <div class="ally-chip">🇧🇧 Barbados</div>
+          <div class="ally-chip">🇩🇰 Denmark</div>
+          <div class="ally-chip">🇰🇪 Kenya</div>
+          <div class="ally-chip">🇧🇷 Brazil</div>
+          <div class="ally-chip">🇨🇱 Chile</div>
+          <div class="ally-chip">🇲🇽 Mexico</div>
+          <div class="ally-chip">🇫🇷 France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VANUATU -->
+  <div class="country-panel" id="country-vanuatu">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇻🇺</div>
+        <div class="profile-meta">
+          <h3>Vanuatu</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">Ripablik blong Vanuatu — Republic of Vanuatu</p>
+          <div class="profile-tags">
+            <span class="tag tag-red">Climate Emergency</span>
+            <span class="tag tag-blue">Small Island State (SIDS)</span>
+            <span class="tag tag-amber">ICJ Climate Opinion Leader</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Pacific Islands</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Least Developed Country</div></div>
+        <div class="profile-stat"><div class="stat-label">Emissions</div><div class="stat-value">Negligible (0.0009% global)</div></div>
+        <div class="profile-stat"><div class="stat-label">Sea Level Rise</div><div class="stat-value">Existential threat</div></div>
+        <div class="profile-stat"><div class="stat-label">Notable Act</div><div class="stat-value">Led ICJ advisory opinion 2023</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓ (1.5°C critical)</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Vanuatu is on the front lines of the climate crisis. Our 320,000 people emit almost nothing, yet face cyclones, sea level rise, and the destruction of our way of life. Vanuatu led the historic campaign for the International Court of Justice to issue an advisory opinion on states' climate obligations. For us, 1.5°C is not a target — it is a matter of survival.</p>
+        <p><strong>Key message:</strong> "Vanuatu demands, not merely encourages, that all major emitters dramatically strengthen their targets. The right to a clean environment is not aspirational — it is a human right. We demand loss and damage finance from those who created this crisis."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.9</h4>
+        <p><strong>Goal:</strong> Make the right to a clean environment legally binding</p>
+        <p><strong>Proposed change:</strong> Replace "Recommends Member States recognise" with <em>"Declares that the right to a clean, healthy and sustainable environment is a human right under international law and demands all Member States immediately adopt domestic legislation enshrining this right"</em></p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested NEW Clause</h4>
+        <p><strong>Goal:</strong> Add loss and damage finance for vulnerable nations</p>
+        <p><strong>Proposed new clause 2.10:</strong> <em>"Demands that developed nations establish a dedicated Loss and Damage finance facility, providing at least $400 billion annually to least developed countries and Small Island Developing States most severely impacted by climate-related disasters"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇧🇧 Barbados</div>
+          <div class="ally-chip">🇨🇷 Costa Rica</div>
+          <div class="ally-chip">🇰🇪 Kenya</div>
+          <div class="ally-chip">🇲🇬 Madagascar</div>
+          <div class="ally-chip">🇩🇰 Denmark</div>
+          <div class="ally-chip">🇬🇧 UK</div>
+          <div class="ally-chip">🇫🇷 France</div>
+          <div class="ally-chip">🇦🇺 Australia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EGYPT -->
+  <div class="country-panel" id="country-egypt">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇪🇬</div>
+        <div class="profile-meta">
+          <h3>Egypt</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">جمهورية مصر العربية — Arab Republic of Egypt</p>
+          <div class="profile-tags">
+            <span class="tag tag-gold">COP27 Host (2022)</span>
+            <span class="tag tag-amber">Developing Nation</span>
+            <span class="tag tag-blue">Africa Leader</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">North Africa / MENA</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Developing (lower-middle)</div></div>
+        <div class="profile-stat"><div class="stat-label">Vulnerability</div><div class="stat-value">Nile Delta flooding risk</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2050 (conditional)</div></div>
+        <div class="profile-stat"><div class="stat-label">Renewables</div><div class="stat-value">42% by 2030 target</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Egypt hosted COP27 in 2022 and championed the historic Loss and Damage fund. Egypt is highly vulnerable to climate change — the Nile Delta faces serious flooding, and water scarcity threatens millions. We support climate action but insist developed countries deliver on their finance pledges first. Africa has contributed least to climate change yet suffers most.</p>
+        <p><strong>Key message:</strong> "Egypt demands that the principle of common but differentiated responsibilities be upheld. Developed nations created this crisis — they must finance the solution. Egypt will not accept unfair burdens on developing nations."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.6</h4>
+        <p><strong>Goal:</strong> Strengthen and specify climate finance obligations</p>
+        <p><strong>Proposed change:</strong> Replace "Suggests" with "Demands" and add: <em>"…provide a minimum of $100 billion annually in climate finance to developing countries by 2025, with a clear pathway to $300 billion annually by 2030"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇬🇦 Gabon</div>
+          <div class="ally-chip">🇰🇪 Kenya</div>
+          <div class="ally-chip">🇲🇦 Morocco</div>
+          <div class="ally-chip">🇿🇦 South Africa</div>
+          <div class="ally-chip">🇧🇷 Brazil</div>
+          <div class="ally-chip">🇮🇳 India</div>
+          <div class="ally-chip">🇨🇳 China</div>
+          <div class="ally-chip">🇸🇦 Saudi Arabia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TURKIYE -->
+  <div class="country-panel" id="country-turkiye">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇹🇷</div>
+        <div class="profile-meta">
+          <h3>Türkiye</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">Türkiye Cumhuriyeti — Republic of Türkiye</p>
+          <div class="profile-tags">
+            <span class="tag tag-amber">Emerging Economy</span>
+            <span class="tag tag-blue">G20 Member</span>
+            <span class="tag tag-amber">Late Paris Signatory (2021)</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Eurasia (Europe/Asia bridge)</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Emerging / G20</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2053</div></div>
+        <div class="profile-stat"><div class="stat-label">Emissions Trend</div><div class="stat-value">Rising (industrialising)</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified 2021 (late)</div></div>
+        <div class="profile-stat"><div class="stat-label">Renewables</div><div class="stat-value">Major hydro, solar, wind</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Türkiye ratified the Paris Agreement in 2021 and has set a 2053 net-zero target. As a rapidly developing economy, Türkiye insists on being recognised as a developing country for climate finance purposes. We have massive renewable potential and are investing significantly in solar and wind. Türkiye opposes measures that would stall economic development.</p>
+        <p><strong>Key message:</strong> "Türkiye bridges Europe and Asia and can be a hub for clean energy transition. However, the international community must recognise the development needs of countries like Türkiye and provide appropriate financial and technological support."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 1.4</h4>
+        <p><strong>Goal:</strong> Explicitly include emerging economies in development protections</p>
+        <p><strong>Proposed change:</strong> After "developing countries" add: <em>", as well as emerging economies undergoing rapid industrialisation and development,"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇸🇦 Saudi Arabia</div>
+          <div class="ally-chip">🇪🇬 Egypt</div>
+          <div class="ally-chip">🇮🇩 Indonesia</div>
+          <div class="ally-chip">🇮🇳 India</div>
+          <div class="ally-chip">🇧🇷 Brazil</div>
+          <div class="ally-chip">🇨🇳 China</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BARBADOS -->
+  <div class="country-panel" id="country-barbados">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇧🇧</div>
+        <div class="profile-meta">
+          <h3>Barbados</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">Republic of Barbados</p>
+          <div class="profile-tags">
+            <span class="tag tag-red">Climate Emergency</span>
+            <span class="tag tag-blue">Small Island State (SIDS)</span>
+            <span class="tag tag-gold">Bridgetown Initiative Leader</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Caribbean</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Small Island Developing State</div></div>
+        <div class="profile-stat"><div class="stat-label">Emissions</div><div class="stat-value">Negligible globally</div></div>
+        <div class="profile-stat"><div class="stat-label">PM Mia Mottley</div><div class="stat-value">Global climate voice</div></div>
+        <div class="profile-stat"><div class="stat-label">Bridgetown Agenda</div><div class="stat-value">Global finance reform</div></div>
+        <div class="profile-stat"><div class="stat-label">Risk</div><div class="stat-value">Sea rise, hurricanes, drought</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Barbados, under PM Mia Mottley, has become a global voice for climate justice. The Bridgetown Initiative calls for a complete reform of global financial institutions to mobilise climate finance at the scale needed. For Barbados, climate change is an existential threat. We contribute almost nothing to global emissions yet face total destruction of our island and way of life.</p>
+        <p><strong>Key message:</strong> "Barbados reminds this Assembly that 1.5°C to stay alive is our demand. We call for immediate reform of international financial architecture to unlock trillions — not billions — for climate action. We will not accept half-measures while our island sinks."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.6</h4>
+        <p><strong>Goal:</strong> Demand systemic financial reform, not just fund contributions</p>
+        <p><strong>Proposed change:</strong> Add new sub-clause: <em>"…and calls on multilateral development banks to reform their lending criteria to allow Small Island Developing States to access concessional climate finance without traditional debt-based constraints"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇻🇺 Vanuatu</div>
+          <div class="ally-chip">🇨🇷 Costa Rica</div>
+          <div class="ally-chip">🇰🇪 Kenya</div>
+          <div class="ally-chip">🇲🇬 Madagascar</div>
+          <div class="ally-chip">🇩🇰 Denmark</div>
+          <div class="ally-chip">🇬🇧 UK</div>
+          <div class="ally-chip">🇫🇷 France</div>
+          <div class="ally-chip">🇿🇦 South Africa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUSTRALIA -->
+  <div class="country-panel" id="country-australia">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇦🇺</div>
+        <div class="profile-meta">
+          <h3>Australia</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">Commonwealth of Australia</p>
+          <div class="profile-tags">
+            <span class="tag tag-blue">Pacific Neighbour</span>
+            <span class="tag tag-green">Renewables Transition</span>
+            <span class="tag tag-amber">Coal Exporter</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Oceania</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Developed / OECD</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2050</div></div>
+        <div class="profile-stat"><div class="stat-label">2030 Target</div><div class="stat-value">43% below 2005 levels</div></div>
+        <div class="profile-stat"><div class="stat-label">Challenge</div><div class="stat-value">Major coal/gas exporter</div></div>
+        <div class="profile-stat"><div class="stat-label">Pacific Role</div><div class="stat-value">Key Pacific partner</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Australia is undergoing a rapid energy transformation. The current government has legislated a 43% emissions reduction by 2030 and net zero by 2050. Australia is investing massively in renewables and green hydrogen. As a Pacific nation, we have deep responsibilities to our Pacific Island neighbours who face existential climate threats.</p>
+        <p><strong>Key message:</strong> "Australia stands with the Pacific on climate action. We are transforming our energy system and commit to being a renewable energy superpower. We call on all developed nations to strengthen their commitments and support vulnerable island nations."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.8</h4>
+        <p><strong>Goal:</strong> Strengthen Indigenous peoples' inclusion (relevant to Australia's domestic context)</p>
+        <p><strong>Proposed change:</strong> Replace "Appeals to all States to consider" with <em>"Urges all States to actively incorporate"</em> and add: <em>"…recognising the traditional ecological knowledge of Indigenous peoples as essential to climate adaptation strategies"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇬🇧 UK</div>
+          <div class="ally-chip">🇨🇦 Canada</div>
+          <div class="ally-chip">🇯🇵 Japan</div>
+          <div class="ally-chip">🇩🇰 Denmark</div>
+          <div class="ally-chip">🇻🇺 Vanuatu</div>
+          <div class="ally-chip">🇧🇧 Barbados</div>
+          <div class="ally-chip">🇫🇷 France</div>
+          <div class="ally-chip">🇩🇪 Germany</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USA -->
+  <div class="country-panel" id="country-usa">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇺🇸</div>
+        <div class="profile-meta">
+          <h3>United States of America</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">United States of America</p>
+          <div class="profile-tags">
+            <span class="tag tag-gold">G7 / P5</span>
+            <span class="tag tag-amber">2nd Largest Emitter</span>
+            <span class="tag tag-red">Policy Uncertainty</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">North America</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">World's largest</div></div>
+        <div class="profile-stat"><div class="stat-label">Emissions</div><div class="stat-value">~15% of global total</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">2050 (Biden era, uncertain)</div></div>
+        <div class="profile-stat"><div class="stat-label">IRA Investment</div><div class="stat-value">$369B clean energy</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Complex history (rejoined 2021)</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>The United States has invested $369 billion in clean energy through the Inflation Reduction Act — the largest climate investment in US history. America's private sector is driving an energy revolution. However, the US emphasises voluntary, market-led solutions over binding international mandates, and prioritises energy security and economic competitiveness alongside climate action.</p>
+        <p><strong>Key message:</strong> "The United States is leading through innovation and investment, not mandates. American technology and capital are transforming the global energy landscape. We encourage all nations to create the conditions for private sector climate investment."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.2</h4>
+        <p><strong>Goal:</strong> Soften the binding language and include nuclear</p>
+        <p><strong>Proposed change:</strong> Replace "Requests that all wealthy industrialised nations" with <em>"Encourages all nations"</em> and remove "nuclear" from the phase-out list, instead adding: <em>", while recognising nuclear energy as a low-carbon transitional option"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇬🇧 UK</div>
+          <div class="ally-chip">🇨🇦 Canada</div>
+          <div class="ally-chip">🇯🇵 Japan</div>
+          <div class="ally-chip">🇦🇺 Australia</div>
+          <div class="ally-chip">🇫🇷 France</div>
+        </div>
+      </div>
+      <div class="caution-block">
+        <h4>⚠️ Diplomatic note</h4>
+        <p>The USA has a complex climate history. Represent the current policy position — focus on private sector leadership and IRA investments while defending energy security arguments if challenged.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GABON -->
+  <div class="country-panel" id="country-gabon">
+    <div class="card">
+      <div class="profile-header">
+        <div class="flag-emoji">🇬🇦</div>
+        <div class="profile-meta">
+          <h3>Gabon</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:.2rem 0">République Gabonaise — Gabonese Republic</p>
+          <div class="profile-tags">
+            <span class="tag tag-green">Carbon Sink Nation</span>
+            <span class="tag tag-green">88% Forest Cover</span>
+            <span class="tag tag-blue">Central Africa</div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-stat"><div class="stat-label">Region</div><div class="stat-value">Central Africa</div></div>
+        <div class="profile-stat"><div class="stat-label">Economy</div><div class="stat-value">Upper-middle income (oil)</div></div>
+        <div class="profile-stat"><div class="stat-label">Forest Cover</div><div class="stat-value">88% — absorbs more CO₂ than it emits</div></div>
+        <div class="profile-stat"><div class="stat-label">Net Zero Target</div><div class="stat-value">Carbon negative already</div></div>
+        <div class="profile-stat"><div class="stat-label">Climate Finance</div><div class="stat-value">Receives payments for forest</div></div>
+        <div class="profile-stat"><div class="stat-label">Paris Agreement</div><div class="stat-value">Ratified ✓</div></div>
+      </div>
+      <div class="position-block">
+        <h4>🎙 Climate Position (2-minute speech focus)</h4>
+        <p>Gabon is one of the world's great carbon sinks. With 88% forest cover and being carbon negative, Gabon already provides an enormous global climate service. We demand that developed nations compensate countries like Gabon for maintaining these forests — through REDD+ payments, the Green Climate Fund, and biodiversity credits. We call for equitable recognition of our forests' value.</p>
+        <p><strong>Key message:</strong> "Gabon's forests absorb more carbon than our entire economy emits. We are already doing our part. Now we ask the world to pay us for the climate service we provide to all of humanity — and to protect forest nations from economic pressure to clear forests for development."</p>
+      </div>
+      <div class="amendment-suggestion">
+        <h4>✏️ Suggested Amendment — Clause 2.3</h4>
+        <p><strong>Goal:</strong> Add compensation mechanisms for forest protection</p>
+        <p><strong>Proposed change:</strong> Add at end of 2.3: <em>", and establish binding international payment mechanisms that compensate developing nations for maintaining carbon sinks, recognising forests as critical global climate infrastructure"</em></p>
+      </div>
+      <div class="allies-block">
+        <h4>🤝 Strategic Allies</h4>
+        <div class="ally-chips">
+          <div class="ally-chip">🇨🇷 Costa Rica</div>
+          <div class="ally-chip">🇧🇷 Brazil</div>
+          <div class="ally-chip">🇰🇪 Kenya</div>
+          <div class="ally-chip">🇲🇬 Madagascar</div>
+          <div class="ally-chip">🇿🇦 South Africa</div>
+          <div class="ally-chip">🇪🇬 Egypt</div>
+          <div class="ally-chip">🇲🇦 Morocco</div>
+          <div class="ally-chip">🇮🇩 Indonesia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEECHES -->
+<section id="speeches">
+  <div class="section-label">Speaking in the Assembly</div>
+  <h2>Speech & Phrase Guide</h2>
+  <p>All delegates speak in <strong>German</strong> on conference day. Use these phrases throughout. You must address the Secretary-General as <em>"Ehrenwerte/r Herr/Frau Generalsekretär/in"</em> and fellow delegates as <em>"geschätzte Kolleginnen und Kollegen"</em>.</p>
+
+  <div class="tip-box">
+    <h4>📋 Position Statement Structure (2 minutes)</h4>
+    <p>1. <strong>Open</strong> with a formal greeting<br>
+    2. <strong>State your country's position</strong> in 1–2 sentences<br>
+    3. <strong>Give 2–3 specific points</strong> about your country's situation/policies<br>
+    4. <strong>State what you support or oppose</strong> in the Draft Resolution<br>
+    5. <strong>Signal your amendment</strong> intentions<br>
+    6. <strong>Close formally</strong> — thank the assembly</p>
+  </div>
+
+  <div class="phrase-section">
+    <h3>🟦 Opening & Formal Phrases</h3>
+    <div class="phrase-grid">
+      <div class="phrase">"Vielen Dank, ehrenwerte/r Herr/Frau Generalsekretär/in und geschätzte Kolleginnen und Kollegen der Vollversammlung."<span>Thank you, Honourable Secretary-General and distinguished delegates.</span></div>
+      <div class="phrase">"[Land] möchte seine Position zu diesem wichtigen Thema darlegen."<span>[Country] would like to present its position on this important topic.</span></div>
+      <div class="phrase">"Die Delegation von [Land] begrüßt diese Gelegenheit zur Diskussion."<span>The delegation of [Country] welcomes this opportunity for discussion.</span></div>
+      <div class="phrase">"[Land] möchte sich auf die Ausführungen der Delegation von [anderes Land] beziehen."<span>[Country] would like to respond to the statement of the delegation of [other country].</span></div>
+    </div>
+  </div>
+
+  <div class="phrase-section">
+    <h3>🟩 Supporting / Agreeing</h3>
+    <div class="phrase-grid">
+      <div class="phrase phrase-green">"[Land] unterstützt diesen Vorschlag nachdrücklich."<span>[Country] strongly supports this proposal.</span></div>
+      <div class="phrase phrase-green">"[Land] stimmt dieser Ansicht vollständig zu."<span>[Country] fully agrees with this view.</span></div>
+      <div class="phrase phrase-green">"[Land] begrüßt die Initiative von [anderes Land]."<span>[Country] welcomes the initiative of [other country].</span></div>
+      <div class="phrase phrase-green">"[Land] ist bereit, diesen Änderungsvorschlag zu unterstützen."<span>[Country] is prepared to support this amendment.</span></div>
+      <div class="phrase phrase-green">"In Übereinstimmung mit [anderes Land] ist [Land] der Meinung, dass..."<span>In agreement with [other country], [Country] believes that...</span></div>
+    </div>
+  </div>
+
+  <div class="phrase-section">
+    <h3>🟥 Opposing / Disagreeing</h3>
+    <div class="phrase-grid">
+      <div class="phrase phrase-red">"[Land] kann diesem Vorschlag in der vorliegenden Form nicht zustimmen."<span>[Country] cannot agree to this proposal in its current form.</span></div>
+      <div class="phrase phrase-red">"[Land] ist besorgt über die möglichen Auswirkungen dieser Maßnahme."<span>[Country] is concerned about the possible impacts of this measure.</span></div>
+      <div class="phrase phrase-red">"[Land] lehnt diese Klausel ab, da sie..."<span>[Country] rejects this clause because it...</span></div>
+      <div class="phrase phrase-red">"[Land] möchte betonen, dass dieser Vorschlag die Entwicklungsinteressen nicht berücksichtigt."<span>[Country] wishes to emphasise that this proposal does not consider development interests.</span></div>
+    </div>
+  </div>
+
+  <div class="phrase-section">
+    <h3>🟨 Proposing Amendments / Negotiating</h3>
+    <div class="phrase-grid">
+      <div class="phrase phrase-gold">"[Land] schlägt folgende Änderung zu Klausel [Nummer] vor..."<span>[Country] proposes the following amendment to clause [number]...</span></div>
+      <div class="phrase phrase-gold">"[Land] beantragt eine unmoderierte Sitzung von [5/10] Minuten."<span>[Country] moves for an unmoderated caucus of [5/10] minutes.</span></div>
+      <div class="phrase phrase-gold">"Würde [anderes Land] bereit sein, diesen Änderungsvorschlag zu unterstützen?"<span>Would [other country] be willing to support this amendment?</span></div>
+      <div class="phrase phrase-gold">"[Land] schlägt einen Kompromiss vor: ..."<span>[Country] proposes a compromise: ...</span></div>
+      <div class="phrase phrase-gold">"Gibt es weitere Länder, die diesen Vorschlag unterstützen möchten?"<span>Are there other countries who wish to support this proposal?</span></div>
+    </div>
+  </div>
+
+  <div class="phrase-section">
+    <h3>💬 Climate-Specific Vocabulary</h3>
+    <div class="phrase-grid">
+      <div class="phrase">der Klimawandel<span>climate change</span></div>
+      <div class="phrase">erneuerbare Energien<span>renewable energy</span></div>
+      <div class="phrase">die Treibhausgase<span>greenhouse gases</span></div>
+      <div class="phrase">das Pariser Abkommen<span>Paris Agreement</span></div>
+      <div class="phrase">die Emissionsreduktion<span>emissions reduction</span></div>
+      <div class="phrase">nachhaltige Entwicklung<span>sustainable development</span></div>
+      <div class="phrase">der Klimafonds<span>the climate fund</span></div>
+      <div class="phrase">Klimagerechtigkeit<span>climate justice</span></div>
+      <div class="phrase">fossile Brennstoffe<span>fossil fuels</span></div>
+      <div class="phrase">Aufforstung<span>reforestation</span></div>
+      <div class="phrase">die Klimafinanzierung<span>climate finance</span></div>
+      <div class="phrase">der Resolutionsentwurf<span>the draft resolution</span></div>
+      <div class="phrase">der Änderungsvorschlag<span>the amendment</span></div>
+      <div class="phrase">die Abstimmung<span>the vote</span></div>
+      <div class="phrase">Verlust und Schaden<span>loss and damage</span></div>
+      <div class="phrase">die Anpassungsmaßnahmen<span>adaptation measures</span></div>
+    </div>
+  </div>
+
+  <div class="phrase-section">
+    <h3>🏁 Closing Phrases</h3>
+    <div class="phrase-grid">
+      <div class="phrase">"[Land] dankt der Vollversammlung für ihre Aufmerksamkeit."<span>[Country] thanks the General Assembly for its attention.</span></div>
+      <div class="phrase">"[Land] hofft auf konstruktive Zusammenarbeit bei dieser wichtigen Frage."<span>[Country] hopes for constructive cooperation on this important matter.</span></div>
+      <div class="phrase">"Ich danke Ihnen, Herr/Frau Generalsekretär/in."<span>Thank you, Mr/Ms Secretary-General.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENDMENTS -->
+<section id="amendments">
+  <div class="section-label">How to Change the Resolution</div>
+  <h2>The Amendment Guide</h2>
+  <p>An amendment is a change to a clause in the Draft Resolution. This is where your diplomatic skill really matters. You're changing the official working document of the assembly.</p>
+
+  <div class="amendment-step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Choose your target clause</h3>
+      <p>Re-read the Draft Resolution and identify which clause most affects your country's interests. You can <strong>modify</strong> an existing clause, <strong>add</strong> a new clause, or <strong>propose removal</strong> of a clause. Pick battles that matter to your country.</p>
+    </div>
+  </div>
+
+  <div class="amendment-step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>Choose your strategy — strengthen or soften?</h3>
+      <p>Use powerful operative words to strengthen a clause, or softer words to weaken it:</p>
+      <p style="margin-top:.5rem;"><strong>To strengthen:</strong></p>
+      <div class="word-bank">
+        <span class="word-chip operative">Demands</span>
+        <span class="word-chip operative">Condemns</span>
+        <span class="word-chip operative">Strongly urges</span>
+        <span class="word-chip operative">Declares</span>
+        <span class="word-chip operative">Calls upon</span>
+        <span class="word-chip operative">Decides</span>
+      </div>
+      <p style="margin-top:.75rem;"><strong>To soften:</strong></p>
+      <div class="word-bank">
+        <span class="word-chip">Encourages</span>
+        <span class="word-chip">Invites</span>
+        <span class="word-chip">Suggests</span>
+        <span class="word-chip">Considers</span>
+        <span class="word-chip">Notes with interest</span>
+        <span class="word-chip">Expresses the hope</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="amendment-step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Write your amendment clearly</h3>
+      <p>Show exactly what is being crossed out and what is being added. Be precise — ambiguous amendments will be challenged in debate. Strike through text you remove and clearly mark text you insert.</p>
+    </div>
+  </div>
+
+  <div class="amendment-step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>Find a seconder</h3>
+      <p>Every amendment needs at least one other country to support it before it can be debated. Use the caucus session and breaks to find your supporters. Tell them why this amendment benefits their country too.</p>
+    </div>
+  </div>
+
+  <div class="amendment-step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <h3>Submit before lunch</h3>
+      <p>All amendments must be submitted on the official UNAAV amendment slip before the end of the caucus session (before 12:30pm). Fill it in clearly and hand it to the Secretariat.</p>
+    </div>
+  </div>
+
+  <div class="example-amendment">
+    <div class="ex-label">✦ Example Amendment Slip</div>
+    <div class="amendment-form-row">
+      <span class="field-label">Clause No: </span>
+      <span class="field-value">2.6</span>
+    </div>
+    <div class="amendment-form-row">
+      <span class="field-label">Proposer (Country): </span>
+      <span class="field-value">Vanuatu</span>
+    </div>
+    <div class="amendment-form-row">
+      <span class="field-label">Seconded by: </span>
+      <span class="field-value">Barbados, Kenya</span>
+    </div>
+    <div class="amendment-form-row" style="margin-top:.75rem;">
+      <div class="field-label">Original Clause:</div>
+      <div class="field-value" style="margin-top:.3rem;"><em>Suggests all wealthy developed States tackle the causes of climate change and increase their financial support to the Green Climate Fund…</em></div>
+    </div>
+    <div class="amendment-form-row" style="margin-top:.75rem;">
+      <div class="field-label">Proposed Amendment:</div>
+      <div class="field-value" style="margin-top:.3rem;"><em><span class="strike">Suggests</span> <span class="insert">Demands</span> all wealthy developed States tackle the causes of climate change and increase their financial support to the Green Climate Fund<span class="insert">, providing a minimum of $100 billion annually by 2025, with a binding commitment to scale this to $300 billion annually by 2030</span>…</em></div>
+    </div>
+    <p style="margin-top:.75rem;font-size:.85rem;color:var(--muted);">🔴 Crossed-out text = deleted &nbsp;|&nbsp; 🟢 Green/bold text = inserted</p>
+  </div>
+
+  <div class="tip-box" style="margin-top:1.5rem;">
+    <h4>💡 Amendment Tips</h4>
+    <p>• Prepare 1–2 amendments before the conference day<br>
+    • Amendments requiring the most support from other countries should be moderate/compromise positions<br>
+    • In the amendment session, you have limited time to argue your case — prepare a 1-minute defence speech<br>
+    • If your amendment passes, it becomes part of the final resolution — real impact!</p>
+  </div>
+</section>
+
+<!-- PROTOCOL -->
+<section id="protocol">
+  <div class="section-label">Rules of the Assembly</div>
+  <h2>Conference Protocol</h2>
+  <p>Follow these rules throughout the entire conference. The Secretary-General enforces them.</p>
+
+  <div class="protocol-rule">
+    <div class="protocol-icon">🪧</div>
+    <div><p><strong>Raise your country placard</strong> — never your hand — to request to speak. Wait for the Secretary-General to call on you.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">🧍</div>
+    <div><p><strong>Stand when speaking.</strong> Always say your name and country before making any statement.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">🎙️</div>
+    <div><p><strong>Address the Secretary-General</strong> as <em>"Ehrenwerter Herr Generalsekretär"</em> or <em>"Ehrenwerte Frau Generalsekretärin"</em> and fellow delegates as <em>"geschätzte Kolleginnen und Kollegen"</em>.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">🌍</div>
+    <div><p><strong>Never say "I"</strong> — always refer to yourself as your country. Not "I think..." but "The delegation of Denmark believes..." Never say "he/she/they" about another delegate — use their country name.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">⏱️</div>
+    <div><p><strong>Position Statements: 3 minutes max.</strong> Caucus speeches: 2 minutes. You will be cut off. Practise your speech aloud before the day.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">🤝</div>
+    <div><p><strong>Represent your country, not yourself.</strong> Put your personal views aside. You are an ambassador — argue your country's interests.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">📱</div>
+    <div><p><strong>Devices allowed</strong> for research — use them to look up facts during caucus sessions if challenged. But do not use AI to write your responses on the day.</p></div>
+  </div>
+  <div class="protocol-rule">
+    <div class="protocol-icon">📝</div>
+    <div><p><strong>Fill in your Friend or Foe sheet</strong> during Position Statements — note which countries share your views and which oppose you. This guides your alliances.</p></div>
+  </div>
+
+  <div style="margin-top:1.5rem;">
+    <h3 style="margin-bottom:.75rem;">Example Opening Address</h3>
+    <div class="card" style="background:var(--un-dark);color:#fff;border-color:var(--un-dark);">
+      <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.5rem;font-family:'Space Mono',monospace;letter-spacing:.06em;">DEUTSCH</p>
+      <p style="color:#fff;font-style:italic;margin-bottom:.75rem;">"Vielen Dank, ehrenwerte Frau Generalsekretärin und geschätzte Kolleginnen und Kollegen der Vollversammlung. Die Delegation von Dänemark möchte ihre klare Position zum Klimawandel darlegen. Dänemark erzeugt über 80 Prozent seines Stroms aus Windenergie und hat sich rechtlich verpflichtet, bis 2050 klimaneutral zu sein. Wir unterstützen das 1,5-Grad-Ziel des Pariser Abkommens als absolute Untergrenze und rufen alle Industrieländer auf, ihre Emissionsreduktionsziele zu verschärfen. Dänemark beabsichtigt, Klausel 2.1 dahingehend zu ändern, dass das 1,5-Grad-Ziel ausdrücklich genannt wird. Wir danken der Vollversammlung für ihre Aufmerksamkeit."</p>
+      <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:.5rem;font-family:'Space Mono',monospace;letter-spacing:.06em;">ENGLISH (for reference)</p>
+      <p style="color:rgba(255,255,255,.75);font-style:italic;font-size:.88rem;">"Thank you, Honourable Secretary-General and distinguished delegates. The delegation of Denmark wishes to present its clear position on climate change. Denmark generates over 80% of its electricity from wind power and has a legally binding commitment to carbon neutrality by 2050. We support the 1.5°C Paris Agreement goal as an absolute minimum and call on all industrialised nations to strengthen their emissions reduction targets. Denmark intends to amend Clause 2.1 to explicitly name the 1.5°C target. We thank the Assembly for its attention."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ALLIANCES -->
+<section id="alliances">
+  <div class="section-label">Strategy</div>
+  <h2>Alliance Map</h2>
+  <p>Knowing who will likely be on your side — and who won't — is essential for diplomacy. These are the rough blocs in this conference. <strong>All countries from your school AND other schools are shown.</strong></p>
+
+  <div class="card" style="margin-bottom:1.25rem;">
+    <h3 style="color:var(--green);margin-bottom:.75rem;">🌿 Climate Ambition Bloc</h3>
+    <p style="font-size:.9rem;margin-bottom:.75rem;">These countries want <strong>strong, binding, urgent action</strong>. They will push to strengthen the resolution and resist attempts to weaken it.</p>
+    <div class="ally-chips">
+      <div class="ally-chip">🇩🇰 Denmark</div>
+      <div class="ally-chip">🇨🇷 Costa Rica</div>
+      <div class="ally-chip">🇻🇺 Vanuatu</div>
+      <div class="ally-chip">🇧🇧 Barbados</div>
+      <div class="ally-chip">🇩🇪 Germany</div>
+      <div class="ally-chip">🇫🇷 France</div>
+      <div class="ally-chip">🇬🇧 UK</div>
+      <div class="ally-chip">🇪🇸 Spain</div>
+      <div class="ally-chip">🇬🇷 Greece</div>
+      <div class="ally-chip">🇳🇱 Netherlands</div>
+      <div class="ally-chip">🇨🇱 Chile</div>
+      <div class="ally-chip">🇰🇪 Kenya</div>
+      <div class="ally-chip">🇲🇬 Madagascar</div>
+      <div class="ally-chip">🇵🇭 Philippines</div>
+      <div class="ally-chip">🇨🇦 Canada</div>
+      <div class="ally-chip">🇦🇺 Australia</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:1.25rem;">
+    <h3 style="color:var(--amber);margin-bottom:.75rem;">⚖️ Development & Finance Bloc</h3>
+    <p style="font-size:.9rem;margin-bottom:.75rem;">These countries support climate action but <strong>prioritise development needs and demand financial support</strong> from wealthy nations before committing to more.</p>
+    <div class="ally-chips">
+      <div class="ally-chip">🇪🇬 Egypt</div>
+      <div class="ally-chip">🇬🇦 Gabon</div>
+      <div class="ally-chip">🇲🇦 Morocco</div>
+      <div class="ally-chip">🇿🇦 South Africa</div>
+      <div class="ally-chip">🇮🇩 Indonesia</div>
+      <div class="ally-chip">🇧🇷 Brazil</div>
+      <div class="ally-chip">🇮🇳 India</div>
+      <div class="ally-chip">🇲🇽 Mexico</div>
+      <div class="ally-chip">🇲🇳 Mongolia</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:1.25rem;">
+    <h3 style="color:var(--red);margin-bottom:.75rem;">⛽ Energy Security / Transition Bloc</h3>
+    <p style="font-size:.9rem;margin-bottom:.75rem;">These countries will <strong>resist rapid fossil fuel phase-out language</strong> and push for slower, voluntary transitions.</p>
+    <div class="ally-chips">
+      <div class="ally-chip">🇸🇦 Saudi Arabia</div>
+      <div class="ally-chip">🇺🇸 USA</div>
+      <div class="ally-chip">🇹🇷 Türkiye</div>
+      <div class="ally-chip">🇨🇳 China</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--un-blue);margin-bottom:.75rem;">🌐 Swing Countries — Worth Courting</h3>
+    <p style="font-size:.9rem;margin-bottom:.75rem;">These countries may go either way depending on the specific clause. Win them over during the caucus.</p>
+    <div class="alliance-grid">
+      <div class="alliance-card">
+        <h4>🇯🇵 Japan</h4>
+        <p>Supports climate action but cautious on fossil fuel phase-out timelines. Interested in technology solutions.</p>
+      </div>
+      <div class="alliance-card">
+        <h4>🇿🇦 South Africa</h4>
+        <p>Coal-dependent but strongly advocates for climate justice and finance. Will support if finance demands are met.</p>
+      </div>
+      <div class="alliance-card">
+        <h4>🇧🇷 Brazil</h4>
+        <p>Huge forests — will support forest protection strongly. More cautious on agricultural and energy clauses.</p>
+      </div>
+      <div class="alliance-card">
+        <h4>🇮🇳 India</h4>
+        <p>Major developing emitter. Strongly defends development rights. Wants technology transfer and finance guarantees.</p>
+      </div>
+      <div class="alliance-card">
+        <h4>🇲🇽 Mexico</h4>
+        <p>Supports ambition but faces domestic energy challenges. Interested in green jobs and just transition language.</p>
+      </div>
+      <div class="alliance-card">
+        <h4>🇮🇩 Indonesia</h4>
+        <p>Has major forests and coal. Will support reforestation but resists rapid coal phase-out without compensation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Model United Nations in the German Language · UNAAV Victorian Division · 2026<br>
+  Combating Climate Change: Committing to Global Action · SDG 13
+</footer>
+
+</div>
+
+<script>
+function showCountry(id) {
+  document.querySelectorAll('.country-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ctab').forEach(t => t.classList.remove('active'));
+  document.getElementById('country-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
