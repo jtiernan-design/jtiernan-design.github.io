@@ -1,1 +1,0 @@
-# jtiernan-design.github.io
